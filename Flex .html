@@ -1,0 +1,391 @@
+<!--
+ * @Author: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @Date: 2023-03-05 11:22:24
+ * @LastEditors: error: error: git config user.name & please set dead value or install git && error: git config user.email & please set dead value or install git & please set dead value or install git
+ * @LastEditTime: 2023-03-24 23:17:26
+ * @FilePath: \undefinedf:\桌面\Flex .html
+ * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+-->
+<!DOCTYPE html>
+<!-- saved from url=(0032)https://www.midorg.com/flex.html -->
+<html lang="zh-CN">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>合成台</title>
+    <meta name="description" content="Re01 Flex布局。" />
+    <link rel="icon" href="https://s1.ax1x.com/2023/03/24/ppBfzYd.png" />
+    <link rel="manifest" href="https://s1.ax1x.com/2023/03/24/ppBfzYd.png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://s1.ax1x.com/2023/03/24/ppBfzYd.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://s1.ax1x.com/2023/03/24/ppBfzYd.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://s1.ax1x.com/2023/03/24/ppBfzYd.png"
+    />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <style>
+      body {
+        margin: 0;
+        /* vh 是view height 既视窗高度的意思，100就是100%占满窗口高度 */
+        height: 100vh;
+        background-color: #eee;
+      }
+      /* * {
+        border: 1px solid #333;
+      } */
+      .flex {
+        display: flex;
+      }
+      /* 占满比例 */
+      .flex1 {
+        flex: 1;
+      }
+      /* 竖向 */
+      .column {
+        flex-direction: column;
+      }
+      /* 阴影 */
+      .yinYing {
+        box-shadow: rgb(0 0 0 / 20%) 0px 2px 1px -1px,
+          rgb(0 0 0 / 14%) 0px 1px 1px 0px, rgb(0 0 0 / 12%) 0px 1px 3px 0px;
+      }
+      /* 白色背景 */
+      .baiSe {
+        background-color: #fff;
+      }
+      /* 上下左右外边距 */
+      .mg8 {
+        margin: 8px;
+      }
+      /* 右外边距 */
+      .mgr8 {
+        margin-right: 8px;
+      }
+      /* 上外边距 */
+      .mgt8 {
+        margin-top: 8px;
+      }
+      /* 四个小盒子 */
+      .shuJu {
+        height: 100px;
+      }
+      /* 中间的大盒子 */
+      .lieBiaoXiang {
+        height: 160px;
+      }
+      /* 导航条 */
+      .daoHang {
+        padding: 10px 20px;
+        border-bottom: 1px solid rgb(201, 201, 201);
+        font-size: 14px;
+        color: #666;
+      }
+      .neiRong::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
+      }
+
+      /* 当屏幕宽度小于600px时要改变的css */
+      @media (max-width: 600px) {
+        /* 小屏幕上取消侧边栏，后面js时会怎么弹出 */
+        .ceBian {
+          display: none;
+        }
+        /* 内容栏和数据栏flex方向改为竖向 */
+        .neiRong {
+          flex-direction: column;
+        }
+        .shuJuQu {
+          flex-direction: column;
+        }
+        /* 右区加左外边距 */
+        .youQu {
+          margin-left: 8px;
+        }
+        /* 数据块外边距，大小改为自动宽高 */
+        .shuJu {
+          margin: 0 0 8px;
+          flex: auto;
+        }
+      }
+    </style>
+  </head>
+  <body class="flex">
+    <!-- 侧边栏 -->
+    <div
+      style="width: 200px; z-index: 3"
+      class="ceBian flex column baiSe yinYing"
+    >
+      <!-- 侧边头像栏 -->
+      <div
+        style="
+          padding: 10px;
+          align-items: center;
+          justify-content: center;
+          border-bottom: 1px solid #999;
+        "
+        class="flex"
+      >
+        <img
+          alt="logo"
+          src="https://s1.ax1x.com/2023/02/10/pSftvyn.jpg"
+          width="40px"
+          height="40px"
+        />
+        <div style="margin-left: 10px">CTBU</div>
+      </div>
+      <!-- 导航栏 -->
+      <div class="flex1">
+        <div class="daoHang">0</div>
+        <div class="daoHang">1</div>
+        <div class="daoHang">2</div>
+        <div class="daoHang">3</div>
+        <div class="daoHang">4</div>
+      </div>
+    </div>
+    <!-- 主区域 -->
+    <div class="flex flex1 column">
+      <!-- 头部栏 -->
+      <div style="height: 60px; z-index: 2" class="baiSe yinYing"></div>
+      <!-- 内容区 -->
+      <div class="flex flex1 neiRong" style="overflow: auto">
+        <!-- 左区 -->
+        <div style="flex: 3" class="flex column mg8">
+          <!-- 数据区 -->
+          <div class="flex shuJuQu">
+            <!-- 四个小块显示重点数据 -->
+            <div
+              class="shuJu baiSe yinYing conlum flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://www.ctbu.edu.cn/"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4F3R.png"
+                    alt="官网.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: 13%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  官 网
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://www.ctbu.edu.cn/index/xxgg.htm"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4C4J.png"
+                    alt="公告.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: 13%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  公告
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://swzx.ctbu.edu.cn/#/index"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4yrV.png"
+                    alt="事务中心.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: 0%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  事务中心
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://jw.ctbu.edu.cn/sso.jsp"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB408s.png"
+                    alt="教务系统.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: 0%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  教务系统
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://eol.ctbu.edu.cn/meol//index.do"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4wCj.png"
+                    alt="学习平台.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: 0%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  学习平台
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://marxsj.ctbu.edu.cn/login.html"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4Dvq.png"
+                    alt="马院平台.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: 0;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  马院平台
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1 mgr8"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://ncre.neea.edu.cn/"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4B2n.png"
+                    alt="计算机二级.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: -10%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  计算机二级
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="shuJu baiSe yinYing flex1"
+              style="border-radius: 20px; background-color: #4d8fd0"
+            >
+              <div style="margin-left: 20%; margin-top: 10%">
+                <a href="https://cet.neea.edu.cn/"
+                  ><img
+                    src="https://s1.ax1x.com/2023/03/24/ppB4sK0.png"
+                    alt="英语四六级.jpg"
+                    width="60px"
+                    height="60px"
+                /></a>
+                <p
+                  style="
+                    margin-top: -3%;
+                    margin-left: -8%;
+                    font-size: 95%;
+                    color: #f5f5f5;
+                  "
+                >
+                  英语四六级
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- 列表区，列表数据可以无限增加 -->
+          <div class="flex column">
+            <!-- 列表项 -->
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+            <div class="lieBiaoXiang mgt8 baiSe yinYing"></div>
+          </div>
+        </div>
+        <!-- 右区 -->
+        <div style="flex: 1" class="youQu flex column mgr8 mgt8">
+          <!-- 提示区 -->
+          <div style="height: 150px" class="baiSe yinYing"></div>
+          <!-- 消息区 -->
+          <div style="height: 300px" class="mgt8 baiSe yinYing"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
